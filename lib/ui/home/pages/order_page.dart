@@ -16,10 +16,10 @@ class OrderPage extends StatefulWidget {
 }
 
 class _OrderPageState extends State<OrderPage> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     double listItemWidth = MediaQuery.of(context).size.width - 2 * 24;
-    int selectedIndex = 0;
     bool isOrderAvailable = true;
     return isOrderAvailable
         ? Scaffold(
@@ -67,8 +67,8 @@ class _OrderPageState extends State<OrderPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomTabBar(
-                          selectedIndex: selectedIndex,
                           titles: const ['In Progress', 'Past Orders'],
+                          selectedIndex: selectedIndex,
                           onTap: (index) {
                             setState(() {
                               selectedIndex = index;
